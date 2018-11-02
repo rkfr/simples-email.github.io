@@ -1,198 +1,45 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8"/>
 	<title>Email</title>
 </head>
-<body>
-	<style>
-		*,
-		table {
-			margin: 0;
-			padding: 0;
-			outline: none;
-			border: none;
-			font-family: Helvetica, arial, sans-serif;
-		}
-
-		a {
-			text-decoration: none;
-		}
-
-		.wrapper {
-			margin: 0 auto;
-			max-width: 600px;
-			width: 100%;
-		}
-
-		.header {
-			width: 100%;
-		}
-
-		.header-left_text {
-			font-size: 14px;
-			color: #666;
-			text-align: left;
-			padding-top: 10px;
-		}
-
-		.space-in-header {
-			width: 400px;
-		}
-
-		.header-img {
-			width: 30px;
-			height: 30px;
-			padding: 5px 2px 0 2px;
-		}
-
-		.logo-top {
-			width: 169px;
-			height: 45px;
-			padding: 20px;
-			text-align: center;
-		}
-
-		.banner {
-			width: 600px;
-			height: 300px;
-			margin-bottom: 20px;
-		}
-
-		.banner-textarea {
-			padding: 20px 0;
-		}
-
-		.banner-textarea_header{
-			font-size: 30px;
-			color: #333;
-			line-height: 30px;
-			padding-bottom: 20px;
-		}
-
-		.banner-textarea_text {
-			font-size: 16px;
-			color: #666;
-			line-height: 30px;
-			padding: 0 40px;
-		}
-
-		.vertical-line {
-			width: 100%;
-			height: 30px;
-		}
-
-		.line {
-			border-top: 1px solid #d1d1d1;
-		}
-
-
-		.card-block {
-			width: 186px;
-		}
-		
-		.card-block_icons {
-			font-size: 18px;
-			color: #666;
-			line-height: 24px;
-			text-align: center;
-			padding: 15px 0;
-		}
-
-		.card-block_text {
-			font-size: 14px;
-			color: #889098;
-			text-align: center;
-			line-height: 24px;
-			padding-bottom: 15px;
-		}
-
-		.card-block_link {
-			font-size: 14px;
-			color: #0a8cd8;
-			line-height: 20px;
-		}
-		
-		.tablet-block {
-			width: 290;
-			padding: 20px 0 0 0;
-		}
-
-		.tablet-block_icon {
-			width: 290px;
-			height: 160px;
-		}
-
-		.tablet-block_header {
-			padding: 20px 0;
-			font-size: 18px;
-			color: #333;
-			line-height: 24px;
-			text-align: center;
-		}
-
-		.tablet-block_text {
-			font-size: 14px;
-			color: #666;
-			line-height: 24px;
-			text-align: center;
-			padding-bottom: 20px;
-		}
-
-		.tablet-block_link {
-			font-size: 14px;
-			color: #0a8cce;
-			text-align: center;
-		}
-
-		.footer {
-			font-size: 14px;
-			color: #666;
-			text-align: center;
-			padding-bottom: 20px;
-		}
-
-		.footer-link {
-			color: #0a8cce;
-		}
-
-	</style>
-<div class="wrapper">
-	<table width="100%" cellpadding="0" cellspacing="0" border="0">
-		<tbody>
+<body style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+	<div class="wrapper" style="margin: 0 auto;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;max-width: 600px;width: 100%">
+	<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+		<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
 			<!-- header start -->
-			<tr>
-				<td>
-					<table width="100%" cellpadding="0" cellspacing="0" border="0">
-						<tbody>
-							<tr class="header">
-								<td><a class="header-left_text" href="#">View Online</a></td>
-								<td class="space-in-header"></td>
-								<td><div><a href="#"><img class="header-img" src="http://bayguzin.ru/demo2015/email/simples/img/facebook.png" alt=""></a></div></td>
-								<td><div><a href="#"><img class="header-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAArCAYAAADhXXHAAAAB/0lEQVRYheWZS7XDIBCGa6EGWHTB/+9joRZqIRZioRZiIRZiIRauhVjI3UAuzZMZ0rScyzmzBL4zb4bLJXFZa+8AKgANyY7kMJEWQAOgIlmk3qcCJFmT7Bfg9qQH8LTW3s6AbBWAa1IfDm2MuTpNHgX5IgCqQ0BJFgB+3gUaSJekZQAPpV9qpVcFIcnyREg9MMniZI3OgKNcwgXTJ0FHH47R6pGpKUk2s4QLqI9DTmTZf09KUVJpl8z/qeiXa5fLTUiyuAanCKz38Hc5S8ZUxnoEtdbehBB1pCXqy8JyGacwxlwjXa8PfbUSaqsKtLSa5owx19Vo/nO9cusML9bau4dtNLDeKiv754Exh43uO8Y7FVlgBuKgn8FZMbCSnN76TZrgKbdAYsolZUHdqWABVNba+55PRsCK7vXdv1Sri1EuBC3Ogh2Y+PiTZiCSg8ocTvo9v93RrLgIpcAOLs+KNay0ZudNom1gVL6rvK/1m0VFYQoseehR+UoOi4LY2af+C+DxLlAyKLeKRmYg2TmLlHv59oC5Q/9yIOOjswdQxRYEkuUBTX09O1ThR42vZqG4s7SzsCWZZ5xsnjUONp8Ho3OHb3qKPzcDIqshh9NuHuOjADiPwZxf2Yw8Aw3nMUz2K5sxfbiO/gAB0Jz1a/PdX0tr4K7FbLnzaTe2ef9h/QIH5Okwh1cXRAAAAABJRU5ErkJggg==" alt=""></a></div></td>
-								<td><div><a href="#"><img class="header-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAArCAYAAADhXXHAAAAB20lEQVRYhe2ZwZWDIBCGaSENcPAw/9xtwRbSwrZgC7ZgC7ZAC7aQFmwhexl2CSZGRlCzb+e9/2IifAwDjIMxG42IGgAtM/fM7ER3kWNmB6CT/9Rb+1MBCtwUgK0SgBuAjoiqPSBdKuCC+uzQ1tqLeDIXZOztNguoeDN5uhUaN3mZmb92gAw1qRbhAaA6YADXg0DTgJm53ilG38awtfbyDnZc2VhPRBURVVxopwDQLU1/u7Iht2GQqZqHg+ylq6b/2YgBdIVgZ45J8eodwC2Mp5SBakRETQx7S2xkAtDKIEsvyD6Mt7pwZ1s1qULA68kCm8WX7Ne1Mb+ppGIGH0OBFZnUGthnJvGdvHP8JDuakWphA+DUOHf+xWKwcnA08Wmk2OpGnwIWgY3WwsNvmn6LwnK0Fv5hTwsbdHR2WOcbTT4u94YFMBhjjAEwfABs62GLHLeZw6D2L1apsETUhJLnY/RsfPVOakoae6ZUpr9Zs2Sfj/v0XjOL8+KHNn0rrH4GelbvLpaUOG+VcJPeFuxkZzhFkWMRNABW5QsZNSVVFPlTCnMHAutAvX1MMdmbtfaiSXbWKluZPrTcFyAAhr1ubbRlzmmXq6XYJDyukkG5F8f1CGAA0M4KbH/ZvgFdZiciIveHGgAAAABJRU5ErkJggg==" alt=""></a></div></td>
+			<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+				<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+						<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+							<tr class="header" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 100%">
+								<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><a class="header-left_text" href="#" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;text-decoration: none;font-size: 14px;color: #666;text-align: left;padding-top: 10px">View Online</a></td>
+								<td class="space-in-header" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 400px"/>
+								<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><div style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><a href="#" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;text-decoration: none"><img class="header-img" src="http://bayguzin.ru/demo2015/email/simples/img/facebook.png" alt="" style="margin: 0;padding: 5px 2px 0 2px;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 30px;height: 30px"/></a></div></td>
+								<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><div style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><a href="#" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;text-decoration: none"><img class="header-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAArCAYAAADhXXHAAAAB/0lEQVRYheWZS7XDIBCGa6EGWHTB/+9joRZqIRZioRZiIRZiIRauhVjI3UAuzZMZ0rScyzmzBL4zb4bLJXFZa+8AKgANyY7kMJEWQAOgIlmk3qcCJFmT7Bfg9qQH8LTW3s6AbBWAa1IfDm2MuTpNHgX5IgCqQ0BJFgB+3gUaSJekZQAPpV9qpVcFIcnyREg9MMniZI3OgKNcwgXTJ0FHH47R6pGpKUk2s4QLqI9DTmTZf09KUVJpl8z/qeiXa5fLTUiyuAanCKz38Hc5S8ZUxnoEtdbehBB1pCXqy8JyGacwxlwjXa8PfbUSaqsKtLSa5owx19Vo/nO9cusML9bau4dtNLDeKiv754Exh43uO8Y7FVlgBuKgn8FZMbCSnN76TZrgKbdAYsolZUHdqWABVNba+55PRsCK7vXdv1Sri1EuBC3Ogh2Y+PiTZiCSg8ocTvo9v93RrLgIpcAOLs+KNay0ZudNom1gVL6rvK/1m0VFYQoseehR+UoOi4LY2af+C+DxLlAyKLeKRmYg2TmLlHv59oC5Q/9yIOOjswdQxRYEkuUBTX09O1ThR42vZqG4s7SzsCWZZ5xsnjUONp8Ho3OHb3qKPzcDIqshh9NuHuOjADiPwZxf2Yw8Aw3nMUz2K5sxfbiO/gAB0Jz1a/PdX0tr4K7FbLnzaTe2ef9h/QIH5Okwh1cXRAAAAABJRU5ErkJggg==" alt="" style="margin: 0;padding: 5px 2px 0 2px;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 30px;height: 30px"/></a></div></td>
+								<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><div style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><a href="#" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;text-decoration: none"><img class="header-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAArCAYAAADhXXHAAAAB20lEQVRYhe2ZwZWDIBCGaSENcPAw/9xtwRbSwrZgC7ZgC7ZAC7aQFmwhexl2CSZGRlCzb+e9/2IifAwDjIMxG42IGgAtM/fM7ER3kWNmB6CT/9Rb+1MBCtwUgK0SgBuAjoiqPSBdKuCC+uzQ1tqLeDIXZOztNguoeDN5uhUaN3mZmb92gAw1qRbhAaA6YADXg0DTgJm53ilG38awtfbyDnZc2VhPRBURVVxopwDQLU1/u7Iht2GQqZqHg+ylq6b/2YgBdIVgZ45J8eodwC2Mp5SBakRETQx7S2xkAtDKIEsvyD6Mt7pwZ1s1qULA68kCm8WX7Ne1Mb+ppGIGH0OBFZnUGthnJvGdvHP8JDuakWphA+DUOHf+xWKwcnA08Wmk2OpGnwIWgY3WwsNvmn6LwnK0Fv5hTwsbdHR2WOcbTT4u94YFMBhjjAEwfABs62GLHLeZw6D2L1apsETUhJLnY/RsfPVOakoae6ZUpr9Zs2Sfj/v0XjOL8+KHNn0rrH4GelbvLpaUOG+VcJPeFuxkZzhFkWMRNABW5QsZNSVVFPlTCnMHAutAvX1MMdmbtfaiSXbWKluZPrTcFyAAhr1ubbRlzmmXq6XYJDyukkG5F8f1CGAA0M4KbH/ZvgFdZiciIveHGgAAAABJRU5ErkJggg==" alt="" style="margin: 0;padding: 5px 2px 0 2px;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 30px;height: 30px"/></a></div></td>
 							</tr>
 						</tbody>
 					</table>
 				</td>
 			</tr>
 			<!-- header end -->
-			<table width="100%" cellpadding="0" cellspacing="0" border="0">
-				<tbody>
-					<tr>
-				<td align="center">
-					<div><a href="#"><img class="logo-top" src="http://bayguzin.ru/demo2015/email/simples/img/logo.png" alt=""></a></div>
+			<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+				<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+					<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+				<td align="center" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+					<div style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><a href="#" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;text-decoration: none"><img class="logo-top" src="http://bayguzin.ru/demo2015/email/simples/img/logo.png" alt="" style="margin: 0;padding: 20px;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 169px;height: 45px;text-align: center"/></a></div>
 				</td>
 			</tr>
-			<tr>
-				<td>
-					<table width="100%" cellpadding="0" cellspacing="0" border="0">
-						<tbody>
-							<tr>
-								<td>
-									<div>
-										<a href="#">
-											<img class="banner" src="http://bayguzin.ru/demo2015/email/simples/img/banner.png" alt="">
+			<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+				<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+						<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+							<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+								<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+									<div style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+										<a href="#" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;text-decoration: none">
+											<img class="banner" src="http://bayguzin.ru/demo2015/email/simples/img/banner.png" alt="" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 600px;height: 300px;margin-bottom: 20px"/>
 										</a>
 									</div>
 								</td>
@@ -204,28 +51,28 @@
 				</tbody>
 			</table>
 			<!-- start text and heading bottom the image-->
-			<tr>
-				<table width="100%" cellpadding="0" cellspacing="0" border="0" class="banner-textarea">
-					<tbody>
-						<tr>
-							<td align="center" class="banner-textarea_header">Your Awesome Heading</td>
+			<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" class="banner-textarea" style="margin: 0;padding: 20px 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+					<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+						<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+							<td align="center" class="banner-textarea_header" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 30px;color: #333;line-height: 30px;padding-bottom: 20px">Your Awesome Heading</td>
 						</tr>
-						<tr>
-							<td align="center" class="banner-textarea_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+						<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+							<td align="center" class="banner-textarea_text" style="margin: 0;padding: 0 40px;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 16px;color: #666;line-height: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
 						</tr>
 					</tbody>
 				</table>
 			</tr>
 			<!-- end text and heading bottom the image-->
-			<tr>
-				<td>
-					<table width="100%" cellpadding="0" cellspacing="0" border="0">
-						<tbody>
-							<tr>
-								<td class="vertical-line"></td>
+			<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+				<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+						<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+							<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+								<td class="vertical-line" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 100%;height: 30px"/>
 							</tr>
-							<tr>
-								<td class="vertical-line line"></td>
+							<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+								<td class="vertical-line line" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 100%;height: 30px;border-top: 1px solid #d1d1d1"/>
 							</tr>
 						</tbody>
 					</table>
@@ -233,60 +80,60 @@
 			</tr>
 			<!-- start block with card (icons, heading, text, link) -->
 
-			<tr>
-				<td>
-					<table width="100%" cellpadding="0" cellspacing="0" border="0">
-						<tr>
-							<td class="card-block" align="left">
-								<table width="100%" cellpadding="0" cellspacing="0" border="0">
-									<tbody>
-										<tr>
-											<td align="center"><img src="http://bayguzin.ru/demo2015/email/simples/img/icon1.png" alt=""></td>
+			<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+				<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+						<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+							<td class="card-block" align="left" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 186px">
+								<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+									<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+										<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+											<td align="center" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><img src="http://bayguzin.ru/demo2015/email/simples/img/icon1.png" alt="" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"/></td>
 										</tr>
-										<tr>
-											<td class="card-block_icons">Heading</td>
+										<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+											<td class="card-block_icons" style="margin: 0;padding: 15px 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 18px;color: #666;line-height: 24px;text-align: center">Heading</td>
 										</tr>
-										<tr>
-											<td class="card-block_text">Two lines of Locvrem Ipsum will just fit in here.</td>
+										<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+											<td class="card-block_text" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 14px;color: #889098;text-align: center;line-height: 24px;padding-bottom: 15px">Two lines of Locvrem Ipsum will just fit in here.</td>
 										</tr>
-										<tr>
-											<td align="center"><a class="card-block_link" href="#">Read More</a></td>
-										</tr>
-									</tbody>
-								</table>
-							</td>
-							<td class="card-block" align="center">
-								<table width="100%" cellpadding="0" cellspacing="0" border="0">
-									<tbody>
-										<tr>
-											<td align="center"><img src="http://bayguzin.ru/demo2015/email/simples/img/icon1.png" alt=""></td>
-										</tr>
-										<tr>
-											<td class="card-block_icons">Heading</td>
-										</tr>
-										<tr>
-											<td class="card-block_text">Two lines of Locvrem Ipsum will just fit in here.</td>
-										</tr>
-										<tr>
-											<td align="center"><a class="card-block_link" href="#">Read More</a></td>
+										<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+											<td align="center" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><a class="card-block_link" href="#" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;text-decoration: none;font-size: 14px;color: #0a8cd8;line-height: 20px">Read More</a></td>
 										</tr>
 									</tbody>
 								</table>
 							</td>
-							<td class="card-block" align="right">
-								<table width="100%" cellpadding="0" cellspacing="0" border="0">
-									<tbody>
-										<tr>
-											<td align="center"><img src="http://bayguzin.ru/demo2015/email/simples/img/icon1.png" alt=""></td>
+							<td class="card-block" align="center" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 186px">
+								<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+									<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+										<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+											<td align="center" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><img src="http://bayguzin.ru/demo2015/email/simples/img/icon1.png" alt="" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"/></td>
 										</tr>
-										<tr>
-											<td class="card-block_icons">Heading</td>
+										<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+											<td class="card-block_icons" style="margin: 0;padding: 15px 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 18px;color: #666;line-height: 24px;text-align: center">Heading</td>
 										</tr>
-										<tr>
-											<td class="card-block_text">Two lines of Locvrem Ipsum will just fit in here.</td>
+										<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+											<td class="card-block_text" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 14px;color: #889098;text-align: center;line-height: 24px;padding-bottom: 15px">Two lines of Locvrem Ipsum will just fit in here.</td>
 										</tr>
-										<tr>
-											<td align="center"><a class="card-block_link" href="#">Read More</a></td>
+										<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+											<td align="center" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><a class="card-block_link" href="#" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;text-decoration: none;font-size: 14px;color: #0a8cd8;line-height: 20px">Read More</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+							<td class="card-block" align="right" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 186px">
+								<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+									<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+										<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+											<td align="center" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><img src="http://bayguzin.ru/demo2015/email/simples/img/icon1.png" alt="" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"/></td>
+										</tr>
+										<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+											<td class="card-block_icons" style="margin: 0;padding: 15px 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 18px;color: #666;line-height: 24px;text-align: center">Heading</td>
+										</tr>
+										<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+											<td class="card-block_text" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 14px;color: #889098;text-align: center;line-height: 24px;padding-bottom: 15px">Two lines of Locvrem Ipsum will just fit in here.</td>
+										</tr>
+										<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+											<td align="center" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><a class="card-block_link" href="#" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;text-decoration: none;font-size: 14px;color: #0a8cd8;line-height: 20px">Read More</a></td>
 										</tr>
 									</tbody>
 								</table>
@@ -296,58 +143,58 @@
 				</td>
 			</tr>
 			<!-- end block with card (icons, heading, text, link) -->
-			<tr>
-				<td>
-					<table width="100%" cellpadding="0" cellspacing="0" border="0">
-						<tbody>
-							<tr>
-								<td class="vertical-line"></td>
+			<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+				<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+						<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+							<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+								<td class="vertical-line" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 100%;height: 30px"/>
 							</tr>
-							<tr>
-								<td class="vertical-line line"></td>
+							<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+								<td class="vertical-line line" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 100%;height: 30px;border-top: 1px solid #d1d1d1"/>
 							</tr>
 						</tbody>
 					</table>
 				</td>
 			</tr>
 			<!-- start block with 2 ipads -->
-			<tr>
-				<td>
-					<table width="100%" cellpadding="0" cellspacing="0" border="0">
-						<tbody>
-							<tr>
-								<td class="tablet-block" align="left">
-									<table width="100%" cellpadding="0" cellspacing="0" border="0" height="100%">
-										<tbody>
-											<tr>
-												<td><img class="tablet-block_icon" src="http://bayguzin.ru/demo2015/email/simples/img/ipad.png" alt=""></td>
+			<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+				<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+						<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+							<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+								<td class="tablet-block" align="left" style="margin: 0;padding: 20px 0 0 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 290">
+									<table width="100%" cellpadding="0" cellspacing="0" border="0" height="100%" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+										<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+											<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+												<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><img class="tablet-block_icon" src="http://bayguzin.ru/demo2015/email/simples/img/ipad.png" alt="" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 290px;height: 160px"/></td>
 											</tr>
-											<tr>
-												<td class="tablet-block_header">2 Columns Heading </td>
+											<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+												<td class="tablet-block_header" style="margin: 0;padding: 20px 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 18px;color: #333;line-height: 24px;text-align: center">2 Columns Heading </td>
 											</tr>
-											<tr>
-												<td class="tablet-block_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius modtempor incididunt ut labore et dolore. </td>
+											<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+												<td class="tablet-block_text" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 14px;color: #666;line-height: 24px;text-align: center;padding-bottom: 20px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius modtempor incididunt ut labore et dolore. </td>
 											</tr>
-											<tr>
-												<td class="tablet-block_link"><a class="tablet-block_link" href="#">Read More</a></td>
+											<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+												<td class="tablet-block_link" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 14px;color: #0a8cce;text-align: center"><a class="tablet-block_link" href="#" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;text-decoration: none;font-size: 14px;color: #0a8cce;text-align: center">Read More</a></td>
 											</tr>
 										</tbody>
 									</table>
 								</td>
-								<td class="tablet-block" align="right">
-									<table width="100%" cellpadding="0" cellspacing="0" border="0">
-										<tbody>
-											<tr>
-												<td><img class="tablet-block_icon" src="http://bayguzin.ru/demo2015/email/simples/img/ipad.png" alt=""></td>
+								<td class="tablet-block" align="right" style="margin: 0;padding: 20px 0 0 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 290">
+									<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+										<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+											<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+												<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif"><img class="tablet-block_icon" src="http://bayguzin.ru/demo2015/email/simples/img/ipad.png" alt="" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 290px;height: 160px"/></td>
 											</tr>
-											<tr>
-												<td class="tablet-block_header">2 Columns Heading </td>
+											<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+												<td class="tablet-block_header" style="margin: 0;padding: 20px 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 18px;color: #333;line-height: 24px;text-align: center">2 Columns Heading </td>
 											</tr>
-											<tr>
-												<td class="tablet-block_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius modtempor incididunt ut labore et dolore. </td>
+											<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+												<td class="tablet-block_text" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 14px;color: #666;line-height: 24px;text-align: center;padding-bottom: 20px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius modtempor incididunt ut labore et dolore. </td>
 											</tr>
-											<tr>
-												<td class="tablet-block_link"><a class="tablet-block_link" href="#">Read More</a></td>
+											<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+												<td class="tablet-block_link" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 14px;color: #0a8cce;text-align: center"><a class="tablet-block_link" href="#" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;text-decoration: none;font-size: 14px;color: #0a8cce;text-align: center">Read More</a></td>
 											</tr>
 										</tbody>
 									</table>
@@ -358,55 +205,55 @@
 				</td>
 			</tr>
 			<!-- end block with 2 ipads -->
-			<tr>
-				<td>
-					<table width="100%" cellpadding="0" cellspacing="0" border="0">
-						<tbody>
-							<tr>
-								<td class="vertical-line"></td>
+			<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+				<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+						<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+							<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+								<td class="vertical-line" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 100%;height: 30px"/>
 							</tr>
-							<tr>
-								<td class="vertical-line line"></td>
+							<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+								<td class="vertical-line line" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 100%;height: 30px;border-top: 1px solid #d1d1d1"/>
 							</tr>
 						</tbody>
 					</table>
 				</td>
 			</tr>
 			<!-- start awesome heading -->
-			<tr>
-				<table width="100%" cellpadding="0" cellspacing="0" border="0" class="banner-textarea">
-					<tbody>
-						<tr>
-							<td align="center" class="banner-textarea_header">Your Awesome Heading</td>
+			<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" class="banner-textarea" style="margin: 0;padding: 20px 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+					<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+						<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+							<td align="center" class="banner-textarea_header" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 30px;color: #333;line-height: 30px;padding-bottom: 20px">Your Awesome Heading</td>
 						</tr>
-						<tr>
-							<td align="center" class="banner-textarea_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+						<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+							<td align="center" class="banner-textarea_text" style="margin: 0;padding: 0 40px;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 16px;color: #666;line-height: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
 						</tr>
 					</tbody>
 				</table>
 			</tr>
 			<!-- end awesome heading -->
-			<tr>
-				<td>
-					<table width="100%" cellpadding="0" cellspacing="0" border="0">
-						<tbody>
-							<tr>
-								<td class="vertical-line"></td>
+			<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+				<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+						<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+							<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+								<td class="vertical-line" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 100%;height: 30px"/>
 							</tr>
-							<tr>
-								<td class="vertical-line line"></td>
+							<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+								<td class="vertical-line line" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;width: 100%;height: 30px;border-top: 1px solid #d1d1d1"/>
 							</tr>
 						</tbody>
 					</table>
 				</td>
 			</tr>
 			<!-- footer -->
-			<tr>
-				<td>
-					<table width="100%" cellpadding="0" cellspacing="0" border="0">
-						<tbody>
-							<tr>
-								<td class="footer">Click here to <a class="footer-link" href="">Unsubscribe</a></td>
+			<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+				<td style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+						<tbody style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+							<tr style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif">
+								<td class="footer" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;font-size: 14px;color: #666;text-align: center;padding-bottom: 20px">Click here to <a class="footer-link" href="" style="margin: 0;padding: 0;outline: none;border: none;font-family: Helvetica, arial, sans-serif;text-decoration: none;color: #0a8cce">Unsubscribe</a></td>
 							</tr>
 						</tbody>
 					</table>
