@@ -1,3 +1,1 @@
-# letter_template.github.io
-
-**GH-pages [link](https://rkfr.github.io/letter_template.github.io/)**
+[gh-pages](https://rkfr.github.io/simples-email.github.io/)
